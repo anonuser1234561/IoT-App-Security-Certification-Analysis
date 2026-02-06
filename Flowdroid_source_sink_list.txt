@@ -1,0 +1,101 @@
+###############################################################################
+# FlowDroid SourcesAndSinks for Mobile-IoT Privacy Analysis
+
+
+###################################
+#           SENSITIVE SOURCES
+###################################
+
+########## Device Identifiers (READ_PHONE_STATE) ##########
+<android.telephony.TelephonyManager: java.lang.String getDeviceId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getImei()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getMeid()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSubscriberId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> -> _SOURCE_
+
+########## Location APIs (ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION) ##########
+<android.location.Location: double getLatitude()> -> _SOURCE_
+<android.location.Location: double getLongitude()> -> _SOURCE_
+<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)> -> _SOURCE_
+
+########## Wi-Fi / Bluetooth Identifiers ##########
+<android.net.wifi.WifiInfo: java.lang.String getMacAddress()> -> _SOURCE_
+<android.bluetooth.BluetoothAdapter: java.lang.String getAddress()> -> _SOURCE_
+
+########## Accounts & Profile Data ##########
+<android.accounts.AccountManager: android.accounts.Account[] getAccounts()> -> _SOURCE_
+
+########## Content Provider Data ##########
+<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllBookmarks()> -> _SOURCE_
+<android.provider.Browser: android.database.Cursor getAllVisitedUrls()> -> _SOURCE_
+
+########## Audio Recording ##########
+<android.media.AudioRecord: int read(short[],int,int)> -> _SOURCE_
+<android.media.AudioRecord: int read(byte[],int,int)> -> _SOURCE_
+
+########## Intent Extras (user input / passwords often arrive here) ##########
+%<android.content.Intent: java.lang.String getStringExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)> -> _SOURCE_
+%<android.content.Intent: boolean getBooleanExtra(java.lang.String, boolean)> -> _SOURCE_
+
+########## SharedPreferences as a Source ##########
+# Apps may store sensitive identifiers or passwords here
+<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)> -> _SOURCE_
+<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)> -> _SOURCE_
+
+########## User-Provided Passwords (common in IoT apps) ##########
+# Captures password text fields (FlowDroid treats editable views as sources)
+<android.widget.EditText: java.lang.CharSequence getText()> -> _SOURCE_
+
+###################################
+#           SENSITIVE SINKS
+###################################
+
+########## Logging APIs (IOXT SD111 Violation) ##########
+<android.util.Log: int d(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int e(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int i(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int v(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int w(java.lang.String,java.lang.String)> -> _SINK_
+<android.util.Log: int wtf(java.lang.String,java.lang.String)> -> _SINK_
+
+########## External Storage / File I/O (IOXT SD109 Violation) ##########
+<java.io.OutputStream: void write(byte[])> -> _SINK_
+<java.io.OutputStream: void write(byte[],int,int)> -> _SINK_
+<java.io.Writer: void write(java.lang.String)> -> _SINK_
+<java.io.Writer: void write(char[],int,int)> -> _SINK_
+<java.io.FileOutputStream: void write(byte[])> -> _SINK_
+<java.io.File: boolean createNewFile()> -> _SINK_
+
+########## SharedPreferences Writes ##########
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)> -> _SINK_
+<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)> -> _SINK_
+
+########## Network Sinks (data exfiltration) ##########
+<java.net.URLConnection: java.io.OutputStream getOutputStream()> -> _SINK_
+<java.net.HttpURLConnection: java.io.OutputStream getOutputStream()> -> _SINK_
+<java.net.Socket: void connect(java.net.SocketAddress)> -> _SINK_
+<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_
+
+########## IPC / Broadcast / Intents ##########
+<android.content.Context: void sendBroadcast(android.content.Intent)> -> _SINK_
+<android.content.Context: void sendOrderedBroadcast(android.content.Intent,java.lang.String)> -> _SINK_
+<android.app.Activity: void startActivity(android.content.Intent)> -> _SINK_
+<android.app.Activity: void startActivityForResult(android.content.Intent,int)> -> _SINK_
+
+########## Media / Audio / Video ##########
+<android.media.MediaRecorder: void start()> -> _SINK_
+<android.media.MediaRecorder: void setVideoSource(int)> -> _SINK_
+
+###############################################################################
+# NOTES
+# - SOURCES represent any API returning sensitive data tied to dangerous
+#   permissions: identifiers, MAC, SIM, accounts, location, Intent extras, etc.
+# - SINKS represent data exposure channels: logs, file I/O, SharedPreferences,
+#   network APIs, broadcast channels, and media APIs.
+# - File includes password sources and logging sinks to detect the issues
+#   reported in prior IoT app studies (e.g., passwords leaked via logs).
+# - FlowDroid may miss implicit flows, which are out of scope.
+###############################################################################
