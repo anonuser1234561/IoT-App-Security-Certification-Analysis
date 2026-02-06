@@ -1,0 +1,14 @@
+Analyzing APK: /Users/sudipasaha/Downloads/Downloaded-Apks/certified-apks/wyze.apk
+*** Base package: com.hualai
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <r.b: void a()>
+=============================================
+=======================================
+***Violated Rule 2a: Found broken hash functions ***Constants: ["SHA256"]
+=======================================
+Total Heuristics: 0
+Total Orthogonal: 0
+Total Constants: 0
+Total Slices: 2
+Average Length: 1.5
+Depth: 1, Count 0

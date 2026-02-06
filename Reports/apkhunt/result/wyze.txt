@@ -1,0 +1,529 @@
+﻿docker : 
+At D:\apkhunt\run_apkhunt.ps1:15 char:5
++     docker run --rm `
++     ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+      _ _   __ __  _   __  _   _                _   
+     / _ \ | _ _ \| | / / | | | |              | |  
+    / /_\ \| |_/ /| |/ /  | |_| | _   _   _ _  | |_ 
+    |  _  ||  __/ |    \  |  _  || | | |/  _  \|  _|
+    | | | || |    | |\  \ | | | || |_| || | | || |_ 
+    \_| |_/\_|    \_| \_/ \_| |_/\ _ _ /|_| |_|\_ _|
+    ------------------------------------------------
+    OWASP MASVS Static Analyzer                                
+        
+[+] APKHunt - a comprehensive static code analysis tool for Android apps
+[+] Based on: OWASP MASVS - https://mobile-security.gitbook.io/masvs/
+[+] Author: Sumit Kalaria & Mrunal Chawda
+[*] Connect: Please do write to us for any suggestions/feedback.
+
+[+] Scan has been started at: 2025-12-21 18:04:20.893639196 +0000 UTC m=+0.059256865
+[+] APK Base: wyze.apk
+[+] APK Size: 121.97266 MB
+[+] APK Directory: /apks/
+[+] APK Static Analysis Path: /apks/wyze_SAST/
+[+] APK Hash: MD5: 5236be9a81388807f056ae3f2621f221
+[+] APK Hash: SHA256: b32291f4e650beac541593672bfad1209189c463ec4ac6283ce2be1ad67c3fea
+
+[+] d2j-dex2jar has started converting APK to Java JAR file
+[+] =======================================================
+exit status 1
+    dex2jar /apks/wyze.apk -> /apks/wyze.jar
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:101)
+	at java.base/java.lang.StringBuilder.<init>(StringBuilder.java:119)
+	at com.googlecode.d2j.reader.DexFileReader.getString(DexFileReader.java:964)
+	at com.googlecode.d2j.reader.DexFileReader.getType(DexFileReader.java:975)
+	at com.googlecode.d2j.reader.DexFileReader.getField(DexFileReader.java:917)
+	at com.googlecode.d2j.reader.DexFileReader.acceptInsn(DexFileReader.java:1595)
+	at com.googlecode.d2j.reader.DexFileReader.acceptCode(DexFileReader.java:1407)
+	at com.googlecode.d2j.reader.DexFileReader.acceptMethod(DexFileReader.java:1058)
+	at com.googlecode.d2j.reader.DexFileReader.acceptClass(DexFileReader.java:849)
+	at com.googlecode.d2j.reader.DexFileReader.accept(DexFileReader.java:659)
+	at com.googlecode.d2j.reader.MultiDexFileReader.accept(MultiDexFileReader.java:116)
+	at com.googlecode.d2j.reader.MultiDexFileReader.accept(MultiDexFileReader.java:109)
+	at com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:88)
+	at com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:275)
+	at com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:112)
+	at com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:290)
+	at com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:33)
+
+[+] Jadx has started decompiling the application
+[+] ============================================
+exit status 1
+INFO  - loading ...
+ERROR - Process error:
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.resize(HashMap.java:710)
+	at java.base/java.util.HashMap.putVal(HashMap.java:635)
+	at java.base/java.util.HashMap.put(HashMap.java:618)
+	at java.base/java.util.HashSet.add(HashSet.java:229)
+	at jadx.core.dex.visitors.usage.UseSet.add(UseSet.java:18)
+	at jadx.core.dex.visitors.usage.UsageInfo.clsUse(UsageInfo.java:110)
+	at jadx.core.dex.visitors.usage.UsageInfo.lambda$clsUse$10(UsageInfo.java:70)
+	at jadx.core.dex.visitors.usage.UsageInfo$$Lambda/0x00007a9e90181130.accept(Unknown Source)
+	at jadx.core.dex.visitors.usage.UsageInfo.processType(UsageInfo.java:170)
+	at jadx.core.dex.visitors.usage.UsageInfo.clsUse(UsageInfo.java:70)
+	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processClass(UsageInfoVisitor.java:87)
+	at jadx.core.dex.visitors.usage.UsageInfoVisitor.buildUsageData(UsageInfoVisitor.java:81)
+	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:65)
+	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:356)
+	at jadx.api.JadxDecompiler.load(JadxDecompiler.java:136)
+	at jadx.cli.JadxCLI.runSave(JadxCLI.java:71)
+	at jadx.cli.JadxCLI.execute(JadxCLI.java:44)
+	at jadx.cli.JadxCLI.execute(JadxCLI.java:33)
+	at jadx.cli.JadxCLI.main(JadxCLI.java:26)
+
+[+] Capturing the data from the AndroidManifest file
+[+] ================================================
+
+==>> The Basic Information...
+
+    - Package Name has not been observed.
+    
+    - android:versionName has not been observed.
+    
+    - android:minSdkVersion has not been observed.
+    
+    - android:targetSdkVersion has not been observed.
+    
+    - android:networkSecurityConfig attribute has not been observed.
+    
+
+==>> The Activities...
+
+- No activities have been observed
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+[+] Looking for the Exported Activities specifically...
+
+	- No exported activities have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+    > Total exported activities are: 0
+
+    > QuickNote: It is recommended to use exported activities securely, if observed.
+
+==>> The Content Providers...
+
+	- No Content Providers have been observed
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+[+] Looking for the Exported Content Providers specifically...
+
+	- No exported Content Providers have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+    > Total exported Content Providers are: 0
+
+    > QuickNote: It is recommended to use exported Content Providers securely, if observed.
+
+==>> The Brodcast Receivers...
+
+	- No Brodcast Receivers have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+[+] Looking for the Exported Brodcast Receivers specifically...
+
+	- No exported Brodcast Receivers have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+    > Total exported Brodcast Receivers are: 0
+
+    > QuickNote: It is recommended to use exported Brodcast Receivers securely, if observed.
+
+==>>  The Services...
+
+	- No Services have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+[+] Looking for the Exported Services specifically...
+
+	- No exported Services have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+    > Total exported Services are: 0
+
+    > QuickNote: It is recommended to use exported Services securely, if observed.
+
+==>>  The Intents Filters...
+
+[1;31m[0m[34m[0m[34m[0m[34m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[33m[0m[1;36m[0m[+] ========================================================
+	- No Intents Filters have been observed.
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+    > QuickNote: It is recommended to use Intent Filters securely, if observed.
+
+==>> APK Component Summary
+[+] --------------------------------
+    Exported Activities: 0
+    Exported Content Providers: 0
+    Exported Broadcast Receivers: 0
+    Exported Services: 0
+
+[+] Let's start the static assessment based on "OWASP MASVS"
+
+[+] Hunting begins based on "V2: Data Storage and Privacy Requirements"
+[+] -------------------------------------------------------------------
+
+==>> The Shared Preferences related instances...
+
+
+==>>  The SQLite Database Storage related instances...
+
+
+==>> The Firebase Database instances...
+
+
+==>> The Realm Database instances...
+
+
+==>> The Internal Storage related instances...
+
+
+==>> The External Storage related instances...
+
+
+==>> The Temporary File Creation instances...
+
+
+==>> The Local Storage - Input Validation...
+
+
+==>>  The Information Leaks via Logs...
+
+
+==>> The Push Notification instances...
+
+
+==>> The Keyboard Cache instances...
+
+
+==>>  The Sensitive Data Disclosure through the User Interface...
+
+[!] QuickNote:
+    - It is recommended not to disclose any sensitive data such as password, card details, etc. in the clear-text 
+format via User Interface. Make sure that the application is masking sensitive user input by using the 
+inputType="textPassword" attribute. It is useful to mitigate risks such as shoulder surfing.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-STORAGE-7 | CWE-359: Exposure of Private Personal Information to an Unauthorized Actor
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x07-v2-data_storage_and_privacy_requirements
+
+==>>  The allowBackup flag configuration...
+
+    - android:allowBackup="true" flag has not been observed in the AndroidManifest.xml file.
+
+==>> The Auto-Generated Screenshots protection...
+
+[!] QuickNote:
+    - It is recommended to set the FLAG_SECURE option to protect from Auto-Generated Screenshots issue. Please note 
+that, When the application goes into background, a screenshot of the current activity is taken which may leak 
+sensitive information.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-STORAGE-9 | CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x07-v2-data_storage_and_privacy_requirements
+
+==>> The flush instances utilized for clearing the Memory...
+
+
+==>> The Clipboard Copying instances...
+
+
+==>> The possible Hard-coded Information...
+
+
+==>> The potential Hard-coded Keys/Tokens/Secrets...
+
+
+
+[+] Hunting begins based on "V3: Cryptography Requirements"
+[+] -------------------------------------------------------
+
+==>> The Symmetric Cryptography implementation...
+
+
+==>> The Insecure/Deprecated Cryptographic Algorithms...
+
+
+==>> The Insecure/Weak Cipher Modes...
+
+
+==>> The Static IVs...
+
+
+==>> The Weak Random functions...
+
+
+
+[+] Hunting begins based on "V4: Authentication and Session Management Requirements"
+[+] --------------------------------------------------------------------------------
+
+==>> The cookie related instances...
+
+[~] NOTE:
+    - The test scenarios related to the different authentication mechanisms, stateful/stateless session management, 
+user activities, strong password policies, etc. should be covered during your dynamic analysis/API testing phase.
+
+
+[+] Hunting begins based on "V5: Network Communication Requirements"
+[+] ----------------------------------------------------------------
+
+==>> The presence of the Network Security Configuration file...
+[1;34m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;34m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;34m[0m[1;35m[0m[1;35m
+==>> The Biometric Authentication mechanism...
+ [0m
+[1;35m
+==>> Keys are not invalidated after biometric enrollment...
+ [0m
+
+[!] QuickNote:
+    - It is recommended to configure the Network Security Configuration file (such as network_security_config.xml) 
+as it does not exist. Please note that, Network Security Config file can be used to protect against cleartext 
+traffic, set up trusted certificate authorities, implement certificate pinning, etc. in terms of network security 
+settings.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-NETWORK-1 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x10-v5-network_communication_requirements
+
+==>> The Possible MITM attack...
+
+
+==>> The Weak SSL/TLS protocols...
+
+
+==>>  The app is allowing cleartext traffic...
+
+
+==>> The Server Certificate verification...
+
+
+==>> The WebView Server Certificate verification...
+
+
+==>> The Hostname Verification...
+
+
+==>> The Hard-coded Certificates/Key/Keystore files...
+
+
+==>> The Certificate Pinning settings...
+
+
+==>> The Certificate Pinning implementation...
+
+
+==>> The custom Trust Anchors...
+
+
+==>> The Security Provider implementation...
+
+[!] QuickNote:
+    - It is recommended that applications based on the Android SDK should depend on GooglePlayServices, if not 
+observed. Please note that, The ProviderInstaller class is called with either installIfNeeded or 
+installIfNeededAsync to prevent SSL exploits.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-NETWORK-6 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x10-v5-network_communication_requirements
+
+
+[+] Hunting begins based on "V6: Platform Interaction Requirements"
+[+] ---------------------------------------------------------------
+
+==>> The Permissions...
+
+
+==>> The Deprecated/Unsupprotive Permissions...
+
+
+==>> The Custom Permissions...
+
+
+==>> The Exported service/activity/provider/receiver without permission set...
+
+/apks/wyze_SAST/resources/AndroidManifest.xml
+grep: /apks/wyze_SAST/resources/AndroidManifest.xml: No such file or directory
+
+[!] QuickNote:
+    - It is recommended that the appropriate Permission should be set via android:permission attribute with a 
+proper android:protectionLevel in the AndroidManifest file, if observed. Please note that, The unprotected 
+components can be invoked by other malicious applications and potentially access sensitive data or perform any of 
+the privileged tasks possibly.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-PLATFORM-1 | CWE-276: Incorrect Default Permissions
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x11-v6-interaction_with_the_environment
+
+==>> The potential SQL Injection instances...
+
+
+==>> The potential Cross-Site Scripting flaws...
+
+
+==>> The potential Code Execution flaws...
+
+
+==>> The Fragment Injection instances...
+
+
+==>> The EnableSafeBrowsing setting...
+
+
+==>> The instances of URL Loading in WebViews...
+
+
+==>> The Custom URL Schemes...
+
+
+==>> The Implicit intents used for broadcast...
+
+
+==>> The Implicit intents used for activity...
+
+
+==>> The instances of JavaScript Execution in WebViews...
+
+
+==>> The instances of Remote/Local URL load in WebViews...
+
+
+==>> The Hard-coded links...
+
+
+==>> The instances of Resource Access permissions...
+
+
+==>> The Remote WebView Debugging setting...
+
+
+==>> The instances of Java Objects exposure through WebViews...
+
+
+==>> The Object Persistence/Serialization instances...
+
+
+==>> The WebViews Cleanup implementation...
+
+[!] QuickNote:
+    - It is recommended to clear the WebView resources when the application accesses any sensitive data within 
+that, which may include any files stored locally, the RAM cache, and any loaded JavaScript. Please note that, this 
+present a potential security risk if any sensitive data is being exposed.
+
+[*] Reference:
+    - OWASP MASVS: MSTG-PLATFORM-10 | CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x11-v6-interaction_with_the_environment
+
+==>> The Application Update mechanism...
+
+[!] QuickNote:
+    - It is recommended that applications should be forced to be updated. If a security update comes in, then 
+AppUpdateType.IMMEDIATE flag should be used in order to make sure that the user cannot go forward with using the 
+app without updating it. Please note that, newer versions of an application will not fix security issues that are 
+living in the backends to which the app communicates.
+
+[*] Reference:
+    - OWASP MASVS V1: MSTG-ARCH-9 | CWE-1277: Firmware Not Updateable
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x06-v1-architecture_design_and_threat_modellin
+g_requireme
+
+==>> The potential third-party application installation mechanism...
+
+
+
+[+] Hunting begins based on "V7: Code Quality and Build Setting Requirements"
+[+] -------------------------------------------------------------------------
+
+==>> The debuggable flag configuration...
+
+    - android:debuggable="true" flag has not been observed in the AndroidManifest.xml file.
+
+==>> The StrictMode Policy instances...
+
+
+==>> The Exception Handling instances...
+
+
+==>> The Obfuscated Code blocks...
+
+[!] QuickNote:
+    - It is recommended that some basic obfuscation should be implemented to the release byte-code, if not 
+observed. Please note that, Code obfuscation in the applications protects against reverse engineering, tampering, 
+or other attacks.
+
+[*] Reference:
+    - OWASP MASVS V7: MSTG-CODE-9 | CWE-693: Protection Mechanism Failure
+    - 
+https://mobile-security.gitbook.io/masvs/security-requirements/0x12-v7-code_quality_and_build_setting_requirements
+
+
+[+] Hunting begins based on "V8: Resilience Requirements"
+[+] -----------------------------------------------------
+
+==>> The Root Detection implementation...
+
+[!] QuickNote:
+    - It is recommended to implement root detection mechanisms in the application, if not observed. Please note 
+that, Multiple detection methods should be implemented so that it cannot be bypassed easily.
+
+[*] Reference:
+    - OWASP MASVS V8: MSTG-RESILIENCE-1 | CWE-250: Execution with Unnecessary Privileges
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x15-v8-resiliency_against_reverse_engineering_
+requirements
+
+==>> The Anti-Debugging Detection implementation...
+
+[!] QuickNote:
+    - It is recommended to implement Anti-Debugging detection mechanisms in the application, if not observed. 
+Please note that, Multiple detection methods should be implemented so that it cannot be bypassed easily.
+
+[*] Reference:
+    - OWASP MASVS V8: MSTG-RESILIENCE-2 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x15-v8-resiliency_against_reverse_engineering_
+requirements
+
+==>> The File Integrity Checks implementation...
+
+[!] QuickNote:
+    - It is recommended to implement CRC checks on the app bytecode, native libraries, and important data files, if 
+not observed. Please note that, reverse engineers can easily bypass APK code signature check by re-packaging and 
+re-signing an app. The idea is to have additional controls in place so that the app only runs correctly in its 
+unmodified state, even if the code signature is valid.
+
+[*] Reference:
+    - OWASP MASVS V8: MSTG-RESILIENCE-3 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x15-v8-resiliency_against_reverse_engineering_
+requirements
+
+==>> The Emulator Detection implementation...
+
+[!] QuickNote:
+    - It is recommended to implement Emulator detection mechanisms in the application, if not observed. Please note 
+that, Multiple detection methods should be implemented so that it cannot be bypassed easily.
+
+[*] Reference:
+    - OWASP MASVS V8: MSTG-RESILIENCE-5 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x15-v8-resiliency_against_reverse_engineering_
+requirements
+
+==>> The implementation of any Defence Mechanisms...
+
+[!] QuickNote:
+    - It is recommended to implement various defence mechanisms such as SafetyNet Attestation API, if not observed.
+
+[*] Reference:
+    - OWASP MASVS V8: MSTG-RESILIENCE-7 | CWE-693: Protection Mechanism Failure
+    - https://mobile-security.gitbook.io/masvs/security-requirements/0x15-v8-resiliency_against_reverse_engineering_
+requirements
+
+[+] Scan has been finished at: 2025-12-21 18:07:21.460204923 +0000 UTC m=+180.633790817
+
+[+] Total time taken for hunting: 3m0.575265084s
+
+[*] Thank you for using APKHunt! Made with <3 in India.
+
+[36m[0m[1;34m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[36m[0m[36m[0m[1;34m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[33m[0m[36m[0m[36m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[1;34m[0m[1;35m[0m[1;35m[0m[1;35m[0m[1;35m[0m[36m[0m[36m[0m[1;34m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[36m[0m[36m[0m[1;35m[0m[36m[0m[36m[0m[1;31m[0m

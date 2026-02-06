@@ -1,0 +1,50 @@
+Analyzing APK: /Users/sudipasaha/Downloads/Downloaded-Apks/certified-apks/ks.apk
+*** Base package: nl.moboa.myclay
+=======================================
+***Violated Rule 1a: Found broken crypto schemes ***Constants: ["AES/GCM/NoPadding", "AES/CBC/PKCS7Padding", "AES/GCM-SIV/NoPadding", "AES/CBC/PKCS7Padding", "AES/GCM/NoPadding"]
+=======================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <h.K: void run()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <Z7.b: byte[] a(byte[],byte[])>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <o1.a: void run()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <q0.X: java.lang.Object initialValue()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <Z7.b: byte[] b(byte[],byte[])>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <Z7.c: boolean d(java.lang.String)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <androidx.transition.Explode: void M(android.view.View,android.graphics.Rect,int[])>
+=============================================
+=======================================
+***Violated Rule 2: Found broken hash functions ***Constants: ["SHA-1"]
+[UnitContainer{unit=$fakeLocal_86[0] = "SHA-1", method='<R4.b: U3.a a(S3.a,U3.b,java.util.List)>'}]
+=======================================
+=======================================
+***Violated Rule 2a: Found broken hash functions ***Constants: ["SHA-256", "SHA-256", "SHA-256", "SHA-256", "SHA-256", "SHA-256", "SHA-256", "SHA-256", "SHA-256"]
+=======================================
+=======================================
+***Violated Rule 10a: Found constant IV in code ***Constants: [8, null, 16, 8, 12, 16, 12, 12, 8, 127, 8, 127, 12]
+[UnitContainer{unit=$b1 = $r7[8], method='<g8.d: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r10 = interfaceinvoke $r3.<g8.p: java.lang.Object b(java.lang.String,java.security.Provider)>($r1, null), method='<g8.k: java.lang.Object a(java.lang.String)>'}, UnitContainer{unit=$r3 = virtualinvoke $r1.<g8.r: byte[] a(int,byte[])>(16, $r5), method='<g8.d: byte[] c(byte[][])>'}, UnitContainer{unit=$r7[8] = $b1, method='<g8.d: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[12], method='<g8.d: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r3 = virtualinvoke $r1.<g8.r: byte[] a(int,byte[])>(16, $r3), method='<g8.d: byte[] c(byte[][])>'}, UnitContainer{unit=$r7[12] = $b1, method='<g8.d: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[12], method='<g8.d: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[8], method='<g8.d: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$b1 = $b1 & 127, method='<g8.d: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r7[8] = $b1, method='<g8.d: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$b1 = $b1 & 127, method='<g8.d: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$r7[12] = $b1, method='<g8.d: byte[] b(byte[],byte[])>'}]
+=======================================
+=======================================
+***Violated Rule 14a: Used Predictable KeyStore Password ***Constants: [null, null]
+[UnitContainer{unit=$fakeLocal_7[1] = null, method='<Z7.b: void <init>(java.lang.String,java.security.KeyStore)>'}, UnitContainer{unit=$fakeLocal_162[1] = null, method='<p.r: int a(int)>'}]
+=======================================
+=======================================
+***Violated Rule 7a: Used HTTP Protocol ***Constants: [" encodedPayload", 5, " autoMetadata", null, 0, 2, "\\", 3, "hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3", null, "tz-offset", " eventMillis", null, "UTF-8", " transportName", "UTF-8", ". Skipping...", " uptimeMillis", "", null, "Received event of unsupported encoding ", 0, 1, 2, "", "", 4, -1L, 1, 0, 2, -1L, 3, -1L, 6, 3, "model", "device", 0, 1, null, 1, 0L, ""]
+=======================================
+Total Heuristics: 170
+Total Orthogonal: 0
+Total Constants: 0
+Total Slices: 181
+Average Length: 32.20441988950276
+Depth: 1, Count 170

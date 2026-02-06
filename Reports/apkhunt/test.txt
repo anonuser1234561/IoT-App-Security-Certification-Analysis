@@ -1,0 +1,1 @@
+docker run --rm -v D:\apks\apks_to_test:/apks apkhunt -p /apks/Hubspace.apk

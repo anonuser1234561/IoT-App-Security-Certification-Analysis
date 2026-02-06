@@ -1,0 +1,78 @@
+Analyzing APK: /Users/sudipasaha/Downloads/Downloaded-Apks/certified-apks/nest.apk
+*** Base package: com.nest.android
+=======================================
+***Violated Rule 1a: Found broken crypto schemes ***Constants: ["AES/GCM/NoPadding", "AES/GCM-SIV/NoPadding", "AES/CBC/PKCS7Padding", "AES/GCM/NoPadding"]
+=======================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <c5.b: void <clinit>()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <l7.b: byte[] a(byte[],byte[])>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <b4.a: void d(b4.a$a,long,java.lang.Throwable)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.perf.session.PerfSession: com.google.firebase.perf.session.PerfSession c(java.lang.String)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.remoteconfig.b: void <clinit>()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <l7.b: byte[] b(byte[],byte[])>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.remoteconfig.internal.n: void <init>(com.google.firebase.e,u8.e,com.google.firebase.remoteconfig.internal.ConfigFetchHandler,com.google.firebase.remoteconfig.internal.e,android.content.Context,java.lang.String,java.util.LinkedHashSet,com.google.firebase.remoteconfig.internal.k,java.util.concurrent.ScheduledExecutorService)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.installations.remote.d: void b(int)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <q0.b: void doFrame(long)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.remoteconfig.internal.b: void <init>(java.net.HttpURLConnection,com.google.firebase.remoteconfig.internal.ConfigFetchHandler,com.google.firebase.remoteconfig.internal.e,java.util.Set,v9.c,java.util.concurrent.ScheduledExecutorService)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <androidx.leanback.widget.o1: void <init>(android.content.Context,android.util.AttributeSet)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <s9.d: void <init>(android.content.Context,com.google.firebase.perf.util.f)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <androidx.leanback.widget.o1: void <init>(android.content.Context,android.util.AttributeSet,int)>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.perf.config.RemoteConfigManager: void <init>()>
+=============================================
+=============================================
+***Violated Rule 13: Untrused PRNG (java.util.Random) Found in <com.google.firebase.sessions.SessionFirelogPublisherImpl: void <clinit>()>
+=============================================
+=======================================
+***Violated Rule 2: Found broken hash functions ***Constants: ["SHA1", "SHA-1", "SHA-1", "SHA-1", "SHA1", "SHA-1"]
+[UnitContainer{unit=$fakeLocal_29[0] = "SHA1", method='<t4.a: byte[] a(android.content.Context,java.lang.String)>'}, UnitContainer{unit=$fakeLocal_141[0] = "SHA-1", method='<com.google.firebase.crashlytics.internal.common.d: void <init>(com.google.firebase.crashlytics.internal.common.x)>'}, UnitContainer{unit=$fakeLocal_11[0] = "SHA-1", method='<androidx.core.util.c: byte[] Z(java.lang.String)>'}, UnitContainer{unit=$fakeLocal_184[0] = "SHA-1", method='<com.google.firebase.crashlytics.internal.settings.e: com.google.firebase.crashlytics.internal.settings.e h(android.content.Context,java.lang.String,com.google.firebase.crashlytics.internal.common.x,androidx.core.view.j,java.lang.String,java.lang.String,g8.f,b8.m)>'}, UnitContainer{unit=$fakeLocal_62[0] = "SHA1", method='<w8.a: java.lang.String b()>'}, UnitContainer{unit=$fakeLocal_85[0] = "SHA-1", method='<com.google.firebase.messaging.u: void e(java.lang.String,java.lang.String,android.os.Bundle)>'}]
+=======================================
+=======================================
+***Violated Rule 2a: Found broken hash functions ***Constants: ["SHA-256"]
+=======================================
+=======================================
+***Violated Rule 3a: Used constant keys in code ***Constants: [8, 0, 0, 7, null, 7, null, 255]
+[UnitContainer{unit=i7 = i7 >>> 8, method='<java.math.BigInteger: byte[] toByteArray()>'}, UnitContainer{unit=$i1 = 0, method='<androidx.core.util.c: byte[] G(java.lang.String,byte[],byte[],byte[],int)>'}, UnitContainer{unit=i7 = 0, method='<java.math.BigInteger: byte[] toByteArray()>'}, UnitContainer{unit=$r4 = newarray (byte)[7], method='<q7.a$a: void a(java.nio.ByteBuffer,byte[])>'}, UnitContainer{unit=$r6 = interfaceinvoke $r1.<q7.n: java.lang.Object a(java.lang.String,java.security.Provider)>($r2, null), method='<q7.m: java.lang.Object a(java.lang.String)>'}, UnitContainer{unit=$r4 = newarray (byte)[7], method='<q7.d$a: void a(java.nio.ByteBuffer,byte[])>'}, UnitContainer{unit=return null, method='<h3.b: java.math.BigInteger f()>'}, UnitContainer{unit=$i1 = $i1 * 255, method='<androidx.core.util.c: byte[] G(java.lang.String,byte[],byte[],byte[],int)>'}]
+=======================================
+=======================================
+***Violated Rule 10a: Found constant IV in code ***Constants: [8, 12, 8, 16, 12, 127, 16, 8, 16, 12, 16, 12, null, 127, 8]
+[UnitContainer{unit=$r7[8] = $b1, method='<q7.f: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[12], method='<q7.f: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[8], method='<q7.f: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r3 = virtualinvoke $r1.<q7.r: byte[] a(int,byte[])>(16, $r3), method='<q7.f: byte[] c(byte[][])>'}, UnitContainer{unit=$r7[12] = $b1, method='<q7.f: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$b1 = $b1 & 127, method='<q7.f: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$r5 = newarray (byte)[16], method='<m3.b: byte[] a(java.lang.String,java.lang.String)>'}, UnitContainer{unit=$r7[8] = $b1, method='<q7.f: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r2 = staticinvoke <java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)>(16), method='<q7.a: byte[] n(q7.a,byte[],long,boolean)>'}, UnitContainer{unit=$b1 = $r7[12], method='<q7.f: byte[] b(byte[],byte[])>'}, UnitContainer{unit=$r3 = virtualinvoke $r1.<q7.r: byte[] a(int,byte[])>(16, $r5), method='<q7.f: byte[] c(byte[][])>'}, UnitContainer{unit=$r7[12] = $b1, method='<q7.f: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$r6 = interfaceinvoke $r1.<q7.n: java.lang.Object a(java.lang.String,java.security.Provider)>($r2, null), method='<q7.m: java.lang.Object a(java.lang.String)>'}, UnitContainer{unit=$b1 = $b1 & 127, method='<q7.f: byte[] a(byte[],byte[])>'}, UnitContainer{unit=$b1 = $r7[8], method='<q7.f: byte[] b(byte[],byte[])>'}]
+=======================================
+=======================================
+***Violated Rule 14a: Used Predictable KeyStore Password ***Constants: [null]
+[UnitContainer{unit=$fakeLocal_7[1] = null, method='<l7.b: void <init>(java.lang.String,java.security.KeyStore)>'}]
+=======================================
+=======================================
+***Violated Rule 7a: Used HTTP Protocol ***Constants: ["projects/%s/installations/%s", "https", "https://firebaseremoteconfig.googleapis.com/v1/projects/%s/namespaces/%s:fetch", "https://accounts.google.com/o/oauth2/revoke?token=", "platforms", "https://accounts.google.com/o/oauth2/revoke?token=", 39, "display_version", "@#&=*+-_.,:!?()/~\'%", 34, "projects/%s/installations", "android", "gmp", "https://%s/%s/%s", "projects/%s/installations/%s/authTokens:generate", "https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps", "v2", "?", "spi", "settings", "gcm.n.", "gcm.notification.", "build_version", "gcm.n.image", 1, "https://firebaseremoteconfigrealtime.googleapis.com/v1/projects/%s/namespaces/%s:streamFetchInvalidations"]
+=======================================
+Total Heuristics: 83
+Total Orthogonal: 0
+Total Constants: 0
+Total Slices: 217
+Average Length: 11.608294930875577
+Depth: 1, Count 83
